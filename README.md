@@ -1,7 +1,7 @@
 # PhocasExercise
 
 
-# Short description
+### Short description
 The program will generate and query Database of random peoples, and will output a json file
 with the DB content
 Open Java exercise.pdf for detailed description of the exercise
