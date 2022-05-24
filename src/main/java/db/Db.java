@@ -1,6 +1,7 @@
 package db;
 
 import models.Person;
+import views.PeoplesView;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -85,17 +86,18 @@ public class Db {
             Statement stmt = connection.createStatement();
             String query = "SELECT * FROM Person";
             ResultSet rs = stmt.executeQuery(query);
+            Person printPerson = new Person();
             while (rs.next()){
-                System.out.printf("Person: %d %s %s %d %s %n",
-                        rs.getInt("ID"),
-                        rs.getString("FIRSTNAME"),
-                        rs.getString("LASTNAME"),
-                        rs.getInt("AGE"),
-                        rs.getString("COUNTRY")
-                );
+                printPerson.setID( rs.getInt("ID"));
+                printPerson.setfirstName( rs.getString("FIRSTNAME"));
+                printPerson.setlastName(rs.getString("LASTNAME"));
+                printPerson.setage(rs.getInt("AGE"));
+                printPerson.setcountry(rs.getString("COUNTRY"));
+                PeoplesView.printPerson(printPerson);
             }
+            System.out.println("\n");
         }catch (Exception e){
-            System.out.println("");
+            System.out.println("Error :" + e.getMessage());
         }
     }
     /*

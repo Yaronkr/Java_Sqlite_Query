@@ -8,9 +8,6 @@ import controller.PeoplesController;
 import db.Db;
 import views.PeoplesView;
 
-import java.sql.SQLException;
-
-
 public class Router {
 
     private static boolean exit = false;
@@ -18,8 +15,7 @@ public class Router {
 main class, run until the user choose 6 - to exit
  */
 
-    public static void main(String[] args) throws SQLException {
-
+    public static void main(String[] args) {
         PeoplesController.initialize(); // initialize DB and JSON File
         while(!exit) {
             int action = PeoplesView.menu();
