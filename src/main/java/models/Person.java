@@ -26,6 +26,17 @@ public class Person {
     public void setcountry(String country){ this.country = country;}
     public void setID(int ID){ this.ID = ID;}
 
+    public Person() {
+    }
+
+    public Person(int ID, String firstName, String lastName, int age, String country) {
+        this.ID = ID;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+        this.country = country;
+    }
+
     @Override
     public String toString() {
         return age + " years old " + firstName + " " + lastName + " from " + country;

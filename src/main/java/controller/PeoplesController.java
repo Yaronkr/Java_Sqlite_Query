@@ -24,7 +24,6 @@ public class PeoplesController {
 
     public static void initialize ()  {
         try {
-            WriteToFile.initializeCollection();
             PeoplesController.createCountryList();
             Db.establishDatabaseConnection();
             Db.createTable();

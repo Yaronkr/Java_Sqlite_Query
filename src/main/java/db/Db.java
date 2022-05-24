@@ -100,6 +100,24 @@ public class Db {
             System.out.println("Error :" + e.getMessage());
         }
     }
+/*
+    Retunr person table size
+ */
+    public static int getTableSize(){
+        try {
+            System.out.println("\n>>> Printing DATABASE");
+            Statement stmt = connection.createStatement();
+            String query = "SELECT count(*) FROM Person";
+            ResultSet rs = stmt.executeQuery(query);
+            rs.next();
+            int size = rs.getInt(1);
+
+            return size;
+        }catch (Exception e){
+            System.out.println("Error :" + e.getMessage());
+        }
+        return -1;
+    }
     /*
        find the oldest person in the DB.
        Further improvements: add to a list of old peoples in case there is more than 1

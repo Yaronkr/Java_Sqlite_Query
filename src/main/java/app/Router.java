@@ -5,6 +5,7 @@ package app;
  */
 
 import controller.PeoplesController;
+import data.WriteToFile;
 import db.Db;
 import views.PeoplesView;
 
@@ -16,7 +17,9 @@ main class, run until the user choose 6 - to exit
  */
 
     public static void main(String[] args) {
-        PeoplesController.initialize(); // initialize DB and JSON File
+
+        WriteToFile.initializeCollection();// initialize  JSON File
+        PeoplesController.initialize(); // initialize DB
         while(!exit) {
             int action = PeoplesView.menu();
             if (action == 6){
