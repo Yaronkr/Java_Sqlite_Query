@@ -1,5 +1,3 @@
-# - PhocasExercise -
-
 
 ### Short description
 The program will generate and query Database of random peoples, and will output a json file
